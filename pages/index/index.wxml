@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view>
+    <text>点击头像登陆</text>
+  </view>
+  <view>
+    <text>以下按钮的输出内容均在控制台中</text>
+  </view>
+  <button bindtap="showrecommend" class="mybutton" >显示推荐商品</button>
+  <button bindtap="showbusiness" class="mybutton">显示商家列表</button>
+  <button bindtap="showgoods" class="mybutton">显示商家商品列表</button>
+  <button bindtap="showgoodsdetail"  class="mybutton">显示商品细节</button>
+  <button bindtap="sendorder"  class="mybutton">发送订单</button>
+  <button bindtap="showorderlist"  class="mybutton"> 显示订单列表</button>
+  <button bindtap="showorderdetails"  class="mybutton">显示订单详情</button>
+  <button bindtap="getvcode"  class="mybutton">获取虚拟码</button>
+  <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+  <button bindtap="delreserve"  class="mybutton">删除订单</button>
+  <button bindtap="vlogin"  class="mybutton">核销员登陆</button>
+  <button bindtap="vwriteoff"  class="mybutton">核销员核销二维码</button>
+</view>
